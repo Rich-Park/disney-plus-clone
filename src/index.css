@@ -1,0 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  --primary-color: #040714;
+  --secondary-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: Avenir-Roman, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (480px <= width <= 768px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  body {
+    font-size: 14px;
+  }
+}
