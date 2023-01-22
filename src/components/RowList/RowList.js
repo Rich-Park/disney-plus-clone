@@ -1,12 +1,11 @@
 // Router Imports
 import { useSelector } from "react-redux";
-import { selectMovies } from "../../features/movie/movieSlice";
 
 // Component Imports
 import Row from "../Row/Row";
 
 const RowList = () => {
-  const movies = useSelector(selectMovies);
+  const movies = useSelector((state) => state.movie.movies);
 
   // default row details
   let rowDetails = {

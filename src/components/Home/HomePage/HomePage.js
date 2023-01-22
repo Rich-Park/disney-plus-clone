@@ -3,7 +3,6 @@ import { useEffect } from "react";
 // redux imports
 import { useDispatch, useSelector } from "react-redux";
 import { setMovies } from "../../../features/movie/movieSlice";
-import { selectUserName } from "../../../features/user/userSlice";
 
 // firebase imports
 import db from "../../../firebase";
@@ -20,7 +19,7 @@ import "./HomePage.scss";
 // Refactor to make reusable (4 rows) and viewers since all 5 have same styling besides video in viewers
 const HomePage = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(selectUserName);
+  const userName = useSelector((state) => state.user.name);
 
   useEffect(() => {
     // get documents from firebase and store based on type

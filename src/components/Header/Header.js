@@ -7,8 +7,6 @@ import { auth, provider } from "../../firebase";
 // redux imports
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectUserName,
-  selectUserPhoto,
   setSignOutState,
   setUserLoginDetails,
 } from "../../features/user/userSlice";
@@ -22,8 +20,8 @@ import "./Header.scss";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userName = useSelector(selectUserName);
-  const userPhoto = useSelector(selectUserPhoto);
+  const userName = useSelector((state) => state.user.name);
+  const userPhoto = useSelector((state) => state.user.photo);
 
   // dispatch user login details
   const setUser = (user) => {
